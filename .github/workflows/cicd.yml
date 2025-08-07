@@ -18,10 +18,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-              cd /home/ubuntu/ien-backend
+              cd /home/ubuntu/test
               git fetch --all
               git checkout ${{ github.ref_name }}
               git pull origin ${{ github.ref_name }}
-              pnpm install --frozen-lockfile
-              pnpm build
-              pm2 reload ien-backend || pm2 start dist/main.js --name ien-backend
+              # pnpm install --frozen-lockfile
+              # pnpm build
+              # pm2 reload ien-backend || pm2 start dist/main.js --name ien-backend
